@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h2>Welcome New Student!</h2>
+
+<!--Displaying Value-->
+<h2 th:text="${students.get(0).getFirstName()}"></h2>
+<h2 th:text="${students.get(0).getLastName()}"></h2>
+
+<!--Concatenation-->
+<h2 th:text="${'Welcome ' +students.get(0).getLastName()}"></h2>
+
+<!--Display links-->
+<a th:href="@{http://google.com}">Google</a>
+<br>
+<a th:href="@{/student/welcome}">Your Realm</a>
+<br>
+
+<!--Adding Parameters to Link-->
+<a th:href="@{/student/welcome(id=3)}">Link2</a>
+<br>
+<a th:href="@{/student/welcome(id=${students.get(0).firstName})}">Link3</a>
+
+</body>
+</html>
