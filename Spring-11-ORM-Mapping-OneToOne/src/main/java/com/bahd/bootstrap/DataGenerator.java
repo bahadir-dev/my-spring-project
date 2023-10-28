@@ -2,6 +2,7 @@ package com.bahd.bootstrap;
 
 import com.bahd.entity.Department;
 import com.bahd.entity.Employee;
+import com.bahd.entity.Region;
 import com.bahd.enums.Gender;
 import com.bahd.repository.DepartmentRepository;
 import com.bahd.repository.EmployeeRepository;
@@ -29,6 +30,7 @@ public class DataGenerator implements CommandLineRunner {
 
         List<Employee> employeeList = new ArrayList<>();
         List<Department> departmentList = new ArrayList<>();
+        List<Region> regionList = new ArrayList<>();
 
         Employee e1 = new Employee("Berrie","Hispot","bhspot@dez.com", LocalDate.of(2006,4,23),120000, Gender.M);
         Employee e2 = new Employee("Jess","Root","jroot@mz.com", LocalDate.of(2002,5,25),220000, Gender.F);
@@ -43,10 +45,31 @@ public class DataGenerator implements CommandLineRunner {
         Department d4 = new Department("Phones & Tablets","Electronics");
         Department d5 = new Department("Computers","Electronics");
 
+        Region r1 = new Region("Asia","Japan");
+        Region r2 = new Region("America", "USA");
+        Region r3 = new Region("Europe" , "UK");
+        Region r4 = new Region("Central" , "Peru");
+        Region r5 = new Region("South" , "Australia");
+
+        e1.setDepartment(d1);
+        e2.setDepartment(d2);
+        e3.setDepartment(d3);
+        e4.setDepartment(d4);
+        e5.setDepartment(d5);
+
+        e1.setRegion(r1);
+        e2.setRegion(r2);
+        e3.setRegion(r3);
+        e4.setRegion(r4);
+        e5.setRegion(r5);
+
         employeeList.addAll(Arrays.asList(e1,e2,e3,e4,e5));
         departmentList.addAll(Arrays.asList(d1,d2,d3,d4,d5));
+        regionList.addAll(Arrays.asList(r1,r2,r3));
 
         employeeRepository.saveAll(employeeList);
-        departmentRepository.saveAll(departmentList);
+ //       departmentRepository.saveAll(departmentList);
+
+
     }
 }
