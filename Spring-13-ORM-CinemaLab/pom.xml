@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.bahd</groupId>
-    <artifactId>Spring-12-ORM-OneToMany-ManyToMany</artifactId>
+    <artifactId>Spring-13-ORM-CinemaLab</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>Spring-12-ORM-OneToMany-ManyToMany</name>
-    <description>Spring-12-ORM-OneToMany-ManyToMany</description>
+    <name>Spring-13-ORM-CinemaLab</name>
+    <description>Spring-13-ORM-CinemaLab</description>
     <properties>
         <java.version>11</java.version>
     </properties>
@@ -20,6 +20,10 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.flywaydb</groupId>
+            <artifactId>flyway-core</artifactId>
         </dependency>
 
         <dependency>

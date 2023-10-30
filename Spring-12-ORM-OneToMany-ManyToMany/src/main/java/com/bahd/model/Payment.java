@@ -1,7 +1,7 @@
 package com.bahd.model;
 
 import com.bahd.enums.Status;
-import jakarta.persistence.*;
+import javax.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
