@@ -21,7 +21,7 @@ public class Location extends BaseEntity{
     private String latitude;
     private String longitude;
 
-    @OneToMany(mappedBy = "location")
-    private List<Cinema> cinemaList;
+//    @OneToMany(mappedBy = "location")
+//    private List<Cinema> cinemaList;
 
 }

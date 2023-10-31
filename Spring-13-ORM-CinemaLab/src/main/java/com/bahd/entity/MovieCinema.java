@@ -3,10 +3,7 @@ package com.bahd.entity;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -15,15 +12,16 @@ import java.util.List;
 @NoArgsConstructor
 public class MovieCinema extends BaseEntity{
 
-    @Column(columnDefinition = "DATETIME")
+    @Column(columnDefinition = "TIMESTAMP")
     private LocalDateTime dateTime;
 
-    @ManyToOne
+    //if you put manytoone over here no need to put anything (on onetomany side)
+    @ManyToOne(fetch = FetchType.LAZY)
     private Movie movie;
 
     @OneToMany(mappedBy = "movieCinema")
     private List<Ticket> ticketList;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     private Cinema cinema;
 }

@@ -3,9 +3,7 @@ package com.bahd.entity;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Entity;
-import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
 import java.util.List;
 
 @Entity
@@ -17,9 +15,10 @@ public class UserAccount extends BaseEntity{
     private String password;
     private String username;
 
-    @OneToOne
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name="account_details_id")
     private AccountDetail accountDetail;
 
-    @OneToMany(mappedBy = "userAccount")
-    private List<Ticket> ticketList;
+//    @OneToMany(mappedBy = "userAccount")
+//    private List<Ticket> ticketList;
 }

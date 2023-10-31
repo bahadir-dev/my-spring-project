@@ -3,7 +3,9 @@ package com.bahd.entity;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.ManyToOne;
 import java.time.LocalDateTime;
 
@@ -12,14 +14,15 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 public class Ticket extends BaseEntity{
 
+    @Column(columnDefinition = "TIMESTAMP")
     private LocalDateTime dateTime;
     private Integer seatNumber;
     private Integer rowNumber;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     private UserAccount userAccount;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     private MovieCinema movieCinema;
 
 }

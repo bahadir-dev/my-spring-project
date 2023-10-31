@@ -1,5 +1,5 @@
 package com.bahd.enums;
 
 public enum State {
-    ACTIVE,DRAFT
+    ACTIVE,DRAFT,SUSPENDED
 }

@@ -1,14 +1,15 @@
 package com.bahd.entity;
 
+import com.bahd.enums.UserRole;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Entity;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
 
 @Entity
 @Data
 @NoArgsConstructor
+@Table(name = "account_details")
 public class AccountDetail extends BaseEntity {
 
     private String name;
@@ -19,7 +20,10 @@ public class AccountDetail extends BaseEntity {
     private String postalCode;
     private Integer age;
 
-    @OneToOne
+    @Enumerated(EnumType.STRING)
+    private UserRole userRole = UserRole.USER;
+
+    @OneToOne(mappedBy = "accountDetail")
     private UserAccount userAccount;
 
 }

@@ -4,6 +4,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import java.util.List;
@@ -16,9 +17,10 @@ public class Cinema extends BaseEntity{
     private String name;
     private String sponsoredName;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     private Location location;
 
-    @OneToMany(mappedBy = "cinema")
-    private List<MovieCinema> movieCinemaList;
+    //no need to put onetomany if other side has manytoone
+//    @OneToMany(mappedBy = "cinema")
+//    private List<MovieCinema> movieCinemaList;
 }
