@@ -21,7 +21,7 @@ public class AccountDetail extends BaseEntity {
     private Integer age;
 
     @Enumerated(EnumType.STRING)
-    private UserRole userRole = UserRole.USER;
+    private UserRole role = UserRole.USER;
 
     @OneToOne(mappedBy = "accountDetail")
     private UserAccount userAccount;
