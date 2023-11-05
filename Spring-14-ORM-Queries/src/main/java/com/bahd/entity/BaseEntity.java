@@ -1,7 +1,7 @@
 package com.bahd.entity;
 
-import jakarta.persistence.Id;
-import jakarta.persistence.MappedSuperclass;
+import javax.persistence.*;
+import javax.persistence.MappedSuperclass;
 
 @MappedSuperclass
 public class BaseEntity {

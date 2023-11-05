@@ -1,7 +1,7 @@
 package com.bahd.entity;
 
 import com.bahd.enums.Gender;
-import jakarta.persistence.*;
+import javax.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -22,7 +22,10 @@ public class Employee extends BaseEntity{
     private Gender gender;
     private Integer salary;
 
+    @ManyToOne
+    @JoinColumn(name = "department")
     private Department department;
+    @ManyToOne
     private Region region;
 
 }

@@ -1,8 +1,6 @@
 package com.bahd.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import javax.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -13,6 +11,6 @@ import lombok.NoArgsConstructor;
 public class Department {
 
     @Id
-    private String name;
+    private String department;
     private String division;
 }
