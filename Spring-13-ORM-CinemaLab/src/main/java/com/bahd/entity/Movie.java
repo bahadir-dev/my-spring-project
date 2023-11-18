@@ -3,7 +3,9 @@ package com.bahd.entity;
 import com.bahd.enums.State;
 import com.bahd.enums.Type;
 import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
@@ -11,7 +13,8 @@ import java.time.LocalDate;
 import java.util.List;
 
 @Entity
-@Data
+@Getter
+@Setter
 @NoArgsConstructor
 public class Movie extends BaseEntity {
 
@@ -35,8 +38,16 @@ public class Movie extends BaseEntity {
     @OneToMany(mappedBy = "movie")
     private List<MovieCinema> movieCinemas;
 
-
-
-
-
+    @Override
+    public String toString() {
+        return "Movie{" +
+                "name='" + name + '\'' +
+                ", price=" + price +
+                ", type=" + type +
+                ", state=" + state +
+                ", releaseDate=" + releaseDate +
+                ", duration=" + duration +
+                ", summary='" + summary + '\'' +
+                '}';
+    }
 }

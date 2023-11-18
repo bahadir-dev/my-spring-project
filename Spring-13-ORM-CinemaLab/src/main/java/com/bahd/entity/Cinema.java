@@ -1,7 +1,9 @@
 package com.bahd.entity;
 
 import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -10,7 +12,8 @@ import javax.persistence.OneToMany;
 import java.util.List;
 
 @Entity
-@Data
+@Getter
+@Setter
 @NoArgsConstructor
 public class Cinema extends BaseEntity{
 
@@ -23,4 +26,12 @@ public class Cinema extends BaseEntity{
     //no need to put onetomany if other side has manytoone
 //    @OneToMany(mappedBy = "cinema")
 //    private List<MovieCinema> movieCinemaList;
+
+    @Override
+    public String toString() {
+        return "Cinema{" +
+                "name='" + name + '\'' +
+                ", sponsoredName='" + sponsoredName + '\'' +
+                '}';
+    }
 }

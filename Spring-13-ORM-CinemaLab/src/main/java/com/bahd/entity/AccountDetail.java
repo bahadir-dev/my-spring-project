@@ -2,12 +2,15 @@ package com.bahd.entity;
 
 import com.bahd.enums.UserRole;
 import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import javax.persistence.*;
 
 @Entity
-@Data
+@Getter
+@Setter
 @NoArgsConstructor
 @Table(name = "account_details")
 public class AccountDetail extends BaseEntity {
@@ -26,4 +29,16 @@ public class AccountDetail extends BaseEntity {
     @OneToOne(mappedBy = "accountDetail")
     private UserAccount userAccount;
 
+    @Override
+    public String toString() {
+        return "AccountDetail{" +
+                "name='" + name + '\'' +
+                ", address='" + address + '\'' +
+                ", country='" + country + '\'' +
+                ", city='" + city + '\'' +
+                ", state='" + state + '\'' +
+                ", postalCode='" + postalCode + '\'' +
+                ", age=" + age +
+                '}';
+    }
 }
