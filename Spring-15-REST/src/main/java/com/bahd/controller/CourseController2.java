@@ -43,4 +43,14 @@ public class CourseController2 {
         courseService.updateCourse(courseId, course);
     }
 
+    @DeleteMapping("{id}")
+    public void deleteCourseById(@PathVariable("id") Long courseId){
+        courseService.deleteCourseById(courseId);
+    }
+
+    @DeleteMapping
+    public void deleteAllCourses(){
+        courseService.deleteCourses();
+    }
+
 }
