@@ -27,4 +27,15 @@ public class CourseController2 {
     public CourseDTO getCourseById(@PathVariable("id") Long courseId ){
         return courseService.getCourseById(courseId);
     }
+
+    @GetMapping("category/{name}")
+    public List<CourseDTO> getCourseByCatgory(@PathVariable("name") String category){
+        return courseService.getCoursesByCategory(category);
+    }
+
+    @PostMapping
+    public CourseDTO createCourse(@RequestBody CourseDTO course){
+        return courseService.createCourse(course);
+    }
+
 }
