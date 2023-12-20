@@ -12,7 +12,7 @@ import org.springframework.web.client.RestTemplate;
 
 @SpringBootApplication
 @EnableFeignClients
-@ImportAutoConfiguration({FeignAutoConfiguration.class})
+//@ImportAutoConfiguration({FeignAutoConfiguration.class})
 public class Spring17RestConsumingApIsApplication {
 
 	public static void main(String[] args) {
