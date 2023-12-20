@@ -39,7 +39,7 @@ public class Consume_WebClient {
 //    }
 
     @GetMapping("/mono-movie-cinema/{id}")
-        public ResponseEntity<Mono<MovieCinema>> readdById(@PathVariable("id") Long id){
+        public ResponseEntity<Mono<MovieCinema>> readById(@PathVariable("id") Long id){
             return ResponseEntity.ok(Mono.just(movieCinemaRepository.findById(id).get()));
         }
 
@@ -66,7 +66,7 @@ public class Consume_WebClient {
 
         return webClient
                 .get()
-                .uri("/flux-movie-cinema")
+                .uri("/flux-movie-cinemas")
                 .header(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE)
                 .retrieve()
                 .bodyToFlux(MovieCinema.class);
