@@ -1,7 +1,7 @@
 package com.bahd.controller;
 
-import com.cydeo.model.License;
-import com.cydeo.service.LicenseService;
+import com.bahd.model.License;
+import com.bahd.service.LicenseService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

@@ -1,6 +1,6 @@
 package com.bahd.client;
 
-import com.cydeo.model.Organization;
+import com.bahd.model.Organization;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;

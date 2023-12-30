@@ -1,6 +1,6 @@
 package com.bahd.repository;
 
-import com.cydeo.model.License;
+import com.bahd.model.License;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 

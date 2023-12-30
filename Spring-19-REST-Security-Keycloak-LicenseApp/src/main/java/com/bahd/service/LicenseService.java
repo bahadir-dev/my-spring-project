@@ -1,6 +1,6 @@
 package com.bahd.service;
 
-import com.cydeo.model.License;
+import com.bahd.model.License;
 
 import java.util.List;
 

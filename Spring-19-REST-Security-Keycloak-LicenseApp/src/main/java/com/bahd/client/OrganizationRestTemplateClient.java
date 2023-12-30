@@ -1,6 +1,6 @@
 package com.bahd.client;
 
-import com.cydeo.model.Organization;
+import com.bahd.model.Organization;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;

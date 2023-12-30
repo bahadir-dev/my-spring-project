@@ -1,10 +1,10 @@
 package com.bahd.service.impl;
 
-import com.cydeo.model.License;
-import com.cydeo.model.Organization;
-import com.cydeo.repository.LicenseRepository;
-import com.cydeo.client.OrganizationFeignClient;
-import com.cydeo.service.LicenseService;
+import com.bahd.model.License;
+import com.bahd.model.Organization;
+import com.bahd.repository.LicenseRepository;
+import com.bahd.client.OrganizationFeignClient;
+import com.bahd.service.LicenseService;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
