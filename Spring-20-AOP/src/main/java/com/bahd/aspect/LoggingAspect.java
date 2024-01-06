@@ -37,4 +37,16 @@ public class LoggingAspect {
         logger.info("Before (findById): -> Method: {} - Arguments: {} - Target: {}", joinPoint, joinPoint.getArgs(), joinPoint.getTarget());
     }
 
+    //within
+    @Pointcut("within(com.bahd.controller..*)")
+    private void anyControllerOperation(){}
+
+    @Pointcut("@within(org.springframework.stereotype.Service)")
+    private void anyServiceOperation(){}
+
+    @Before("anyControllerOperation() || anyServiceOperation()")
+    public void beforeControllerAdvice(JoinPoint joinPoint){
+        logger.info("Before (findById): -> Method: {} - Arguments: {} - Target: {}", joinPoint, joinPoint.getArgs(), joinPoint.getTarget());
+    }
+
 }
