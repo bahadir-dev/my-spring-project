@@ -1,6 +1,7 @@
 package com.bahd.aspect;
 
 import org.aspectj.lang.JoinPoint;
+import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -74,6 +75,27 @@ public class LoggingAspect {
     @AfterThrowing(pointcut = "anyGetCourseOperation()", throwing = "exception")
     public void afterThrowingControllerAdvice(JoinPoint joinPoint, RuntimeException exception){
         logger.info("After returning -> Method: {} - Exception:{]", joinPoint.getSignature().toShortString(), exception.toString());
+    }
+
+    @After("anyGetCourseOperation()")
+    public void afterAnyGetOperation(JoinPoint joinPoint){
+        logger.info("After -> Method: {}" , joinPoint.getSignature().toShortString());
+    }
+
+    @Pointcut("@annotation(com.bahd.annotation.Loggable)")
+    private void anyLoggableMethodOperation(){}
+
+    @Around("anyLoggableMethodOperation()")
+    public Object anyLoggableMethodOperationAdvice(ProceedingJoinPoint proceedingJoinPoint){
+        logger.info("Before -> Method : {} - Parameters: {}" , proceedingJoinPoint.getSignature().toShortString(), proceedingJoinPoint.getArgs());
+        Object results = null;
+        try {
+            results = proceedingJoinPoint.proceed();
+        } catch (Throwable e) {
+            e.printStackTrace();
+        }
+        logger.info("After -> Method : {} - Parameters: {}" , proceedingJoinPoint.getSignature().toShortString(), results.toString());
+        return results;
     }
 
 

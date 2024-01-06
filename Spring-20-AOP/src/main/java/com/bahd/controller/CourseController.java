@@ -1,5 +1,6 @@
 package com.bahd.controller;
 
+import com.bahd.annotation.Loggable;
 import com.bahd.dto.CourseDTO;
 import com.bahd.service.CourseService;
 import org.slf4j.Logger;
@@ -32,6 +33,7 @@ public class CourseController {
         return list;
     }
 
+    @Loggable
     @GetMapping("/{id}")
     public CourseDTO getCourseById(@PathVariable("id") Long courseId) {
         return courseService.getCourseById(courseId);
@@ -43,6 +45,7 @@ public class CourseController {
     }
 
 
+    @Loggable
     @PostMapping
     public CourseDTO createCourse(@RequestBody CourseDTO course) {
         return courseService.createCourse(course);
