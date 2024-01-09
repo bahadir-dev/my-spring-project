@@ -16,6 +16,7 @@
         <module>Spring-05-Core-BeanScope</module>
         <module>spring-review-IoC</module>
         <module>spring-review-project</module>
+        <module>Spring-21-UnitTesting-JUnit5</module>
     </modules>
 
     <properties>
